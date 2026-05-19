@@ -31,6 +31,10 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     flowerInteraction.Interaction();
                 }
+                 if (collider.TryGetComponent(out Skullinteraction skullinteraction))
+                {
+                    skullinteraction.SkInteraction();
+                }
 
 
             }
@@ -56,6 +60,23 @@ public class PlayerInteraction : MonoBehaviour
 
         }
         return null;
+    }
+
+    public Skullinteraction GetSkullinteraction()
+    {
+        float interactRange = 1f;
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            foreach (Collider collider in colliderArray)
+            {
+                
+                 if (collider.TryGetComponent(out Skullinteraction skullinteraction))
+                {
+                    return skullinteraction;
+                }
+
+
+            }
+             return null;
     }
 
 }

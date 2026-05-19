@@ -4,8 +4,13 @@ using System.Collections;
 public class DisapearEnemy : MonoBehaviour
 {
     public GameObject enemy;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject scream;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        scream.SetActive(false);
+    }
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
@@ -17,7 +22,8 @@ public class DisapearEnemy : MonoBehaviour
     IEnumerator Disappear()
     {
         Destroy(enemy);
-        yield return new  WaitForSeconds(0.4f);
+        scream.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
     }
 
 }

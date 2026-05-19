@@ -13,7 +13,7 @@ public class PlayerInteractUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInteract.GetInteractableObject() != null)
+        if (playerInteract.GetInteractableObject() != null ||playerInteract.GetSkullinteraction() != null )
         {
             Show();
         }
