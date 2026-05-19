@@ -34,6 +34,8 @@ public class PlayerInteraction : MonoBehaviour
                  if (collider.TryGetComponent(out Skullinteraction skullinteraction))
                 {
                     skullinteraction.SkInteraction();
+                    SceneMeNAGER.instance.NextScene();
+
                 }
 
 
