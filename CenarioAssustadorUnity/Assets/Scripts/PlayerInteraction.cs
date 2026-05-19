@@ -5,17 +5,16 @@ using System.Collections.Generic;
 public class PlayerInteraction : MonoBehaviour
 {
 
-    [SerializeField] private GameObject cross;
-    [SerializeField] private GameObject bloodOne;
-    [SerializeField] private GameObject bloodTwo;
-    [SerializeField] private GameObject bloodTri;
+    [SerializeField] private List<GameObject> objetosAssutadores;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cross.SetActive(false);
-        bloodOne.SetActive(false);
-        bloodTwo.SetActive(false);
-        bloodTri.SetActive(false);
+        foreach (GameObject obj in objetosAssutadores)
+        {
+            obj.SetActive(false);
+        }
+  
     }
 
     // Update is called once per frame
@@ -35,12 +34,13 @@ public class PlayerInteraction : MonoBehaviour
 
 
             }
+            foreach (GameObject obj in objetosAssutadores)
+            {
+                obj.SetActive(true);
+            }
 
-            cross.SetActive(true);
-            bloodOne.SetActive(true);
-            bloodTwo.SetActive(true);
-            bloodTri.SetActive(true);
         }
+
     }
 
     public FlowerInteraction GetInteractableObject()
