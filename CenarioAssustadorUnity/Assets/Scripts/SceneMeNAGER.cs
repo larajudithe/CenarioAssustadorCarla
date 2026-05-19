@@ -36,7 +36,7 @@ public class SceneMeNAGER : MonoBehaviour
     {
         transiAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(sceneNameTwo);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         transiAnim.SetTrigger("Start");
     }
 }
