@@ -5511,7 +5511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 595c2394eab96da4d8ef11ee82dc8a42, type: 3}
       propertyPath: m_Name
-      value: uploads_files_6714175_Christian+Cross
+      value: Cross
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 595c2394eab96da4d8ef11ee82dc8a42, type: 3}
       propertyPath: m_IsActive
