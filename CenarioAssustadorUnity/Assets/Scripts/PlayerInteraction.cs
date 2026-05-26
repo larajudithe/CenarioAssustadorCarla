@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {   
         foreach (GameObject obj in objetosAssutadores)
         {
             obj.SetActive(false);
@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
                  if (collider.TryGetComponent(out Skullinteraction skullinteraction))
                 {
                     skullinteraction.SkInteraction();
-                    SceneMeNAGER.instance.NextScene();
+                    SceneMeNAGER.instance.LoadScene("FinalScene");
 
                 }
 

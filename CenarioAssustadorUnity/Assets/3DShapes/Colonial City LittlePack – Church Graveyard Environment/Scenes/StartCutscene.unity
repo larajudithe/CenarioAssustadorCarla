@@ -1347,7 +1347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621590476}
-  - component: {fileID: 621590475}
+  - component: {fileID: 621590477}
   m_Layer: 0
   m_Name: Scene Changer
   m_TagString: Untagged
@@ -1355,20 +1355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &621590475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621590474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 085e9ef6fcf824d4da03a7b1ad4e5ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneMeNAGER
-  changeTime: 14.5
-  sceneName: Colonial_Graveyard
 --- !u!4 &621590476
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,6 +1370,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &621590477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621590474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7f380a19a67a042a0acb257ad8c809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartLoad
 --- !u!1 &1006281958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134588497}
   - component: {fileID: 2134588496}
+  - component: {fileID: 2134588498}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -2816,6 +2815,8 @@ PlayableDirector:
     value: {fileID: 529604171}
   - key: {fileID: 456672541520652526, guid: 66b793f74df8a144dae5eefc09fc375c, type: 2}
     value: {fileID: 163673009}
+  - key: {fileID: 671839953944072724, guid: 66b793f74df8a144dae5eefc09fc375c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2134588497
@@ -2834,6 +2835,36 @@ Transform:
   - {fileID: 405503776}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134588498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134588495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 19e270bd6c224464ebafbd448e54bd9f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 621590477}
+          m_TargetAssemblyTypeName: StartLoad, Assembly-CSharp
+          m_MethodName: LoadMiddleScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

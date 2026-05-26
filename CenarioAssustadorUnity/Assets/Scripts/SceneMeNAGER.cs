@@ -9,21 +9,29 @@ public class SceneMeNAGER : MonoBehaviour
     public static SceneMeNAGER instance;
     [SerializeField] Animator transiAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+     private void Awake()
     {
-
+        instance = this;
+    }
+public void LoadScene(string sceneName)
+    {
+        StartCoroutine(Transition(sceneName));
     }
 
-    public void NextScene()
+    IEnumerator Transition(string sceneName)
     {
-        StartCoroutine(LoadTheEnd());
-    }
+        if (transiAnim != null)
+        {
+            transiAnim.SetTrigger("End");
+        }
 
-    IEnumerator LoadTheEnd()
-    {
-        transiAnim.SetTrigger("End");
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        transiAnim.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneName);
+
+        if (transiAnim != null)
+        {
+            transiAnim.SetTrigger("Start");
+        }
     }
 }
